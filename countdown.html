@@ -65,11 +65,25 @@
         <div id="countdown-text"></div>
     </div>
 
-    <!-- Agrega copos de nieve -->
-    <div class="snowflake" style="top: 10vh; left: 10vw;"></div>
-    <div class="snowflake" style="top: 5vh; left: 20vw;"></div>
-    <div class="snowflake" style="top: 15vh; left: 30vw;"></div>
-    <!-- Puedes añadir más copos de nieve según sea necesario -->
+    <!-- Script para añadir copos de nieve -->
+    <script>
+        function createSnowflake() {
+            const snowflake = document.createElement('div');
+            snowflake.className = 'snowflake';
+            snowflake.style.left = Math.random() * window.innerWidth + 'px';
+            document.body.appendChild(snowflake);
+
+            setTimeout(() => {
+                snowflake.remove();
+            }, 10000); // Eliminar el copo de nieve después de 10 segundos
+        }
+
+        function snowfall() {
+            setInterval(createSnowflake, 100); // Crear un nuevo copo de nieve cada 100 milisegundos
+        }
+
+        snowfall();
+    </script>
 
     <script>
         function updateCountdown() {
