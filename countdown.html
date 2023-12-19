@@ -25,6 +25,7 @@
             padding: 20px;
             border: 5px solid white;
             border-radius: 10px;
+            z-index: 1; /* Hacer que el contorno y el texto estén por encima de los copos de nieve */
         }
 
         .countdown-title {
@@ -47,6 +48,7 @@
             border-radius: 50%;
             pointer-events: none;
             animation: fall linear infinite;
+            z-index: 0; /* Hacer que los copos de nieve estén por debajo del contorno y el texto */
         }
 
         @keyframes fall {
