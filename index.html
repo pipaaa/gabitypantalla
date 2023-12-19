@@ -8,6 +8,7 @@
         body {
             margin: 0;
             overflow: hidden;
+            background: black; /* Fondo negro */
         }
 
         .content {
@@ -17,21 +18,14 @@
             transform: translate(-50%, -50%);
             text-align: center;
             font-family: 'YourNavidadFont', cursive;
-        }
-
-        .snowflakes {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            pointer-events: none;
-            background: url('fondonavideño.png') repeat;
+            border: 5px solid black; /* Contorno negro */
+            border-radius: 10px; /* Esquinas redondeadas */
+            overflow: hidden; /* Para ocultar el desbordamiento del contenido interno */
         }
     </style>
 </head>
 <body>
     <div class="content" id="content"></div>
-    <div class="snowflakes"></div>
 
     <script>
         const content = document.getElementById('content');
