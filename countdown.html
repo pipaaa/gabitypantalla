@@ -36,7 +36,26 @@
 
         #countdown-text {
             font-size: 1em;
-            font-family: 'Mountains of Christmas', cursive; /* Cambia la tipografía para la cuenta atrás */
+            font-family: 'Mountains of Christmas', cursive;
+        }
+
+        .snowflake {
+            position: absolute;
+            background: #fff;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            pointer-events: none;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(-100vh) rotate(0deg);
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+            }
         }
     </style>
 </head>
@@ -45,6 +64,12 @@
         <div class="countdown-title">Cuenta atrás para Navidad</div>
         <div id="countdown-text"></div>
     </div>
+
+    <!-- Agrega copos de nieve -->
+    <div class="snowflake" style="top: 10vh; left: 10vw;"></div>
+    <div class="snowflake" style="top: 5vh; left: 20vw;"></div>
+    <div class="snowflake" style="top: 15vh; left: 30vw;"></div>
+    <!-- Puedes añadir más copos de nieve según sea necesario -->
 
     <script>
         function updateCountdown() {
