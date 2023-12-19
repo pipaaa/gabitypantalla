@@ -26,7 +26,6 @@
             padding: 20px;
             border: 5px solid white;
             border-radius: 10px;
-            z-index: 1; /* Hacer que el contorno y el texto estén por encima de los copos de nieve */
         }
 
         .countdown-title {
@@ -38,27 +37,7 @@
 
         #countdown-text {
             font-size: 1em;
-            font-family: 'Mountains of Christmas', cursive;
-        }
-
-        .snowflake {
-            position: absolute;
-            background: #fff;
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            pointer-events: none;
-            animation: fall linear infinite;
-            z-index: 0; /* Hacer que los copos de nieve estén por debajo del contorno y el texto del título */
-        }
-
-        @keyframes fall {
-            0% {
-                transform: translateY(-100vh) rotate(0deg);
-            }
-            100% {
-                transform: translateY(100vh) rotate(360deg);
-            }
+            font-family: 'Mountains of Christmas', cursive; /* Cambia la tipografía para la cuenta atrás */
         }
     </style>
 </head>
@@ -67,26 +46,6 @@
         <div class="countdown-title">Cuenta atrás para Navidad</div>
         <div id="countdown-text"></div>
     </div>
-
-    <!-- Script para añadir copos de nieve -->
-    <script>
-        function createSnowflake() {
-            const snowflake = document.createElement('div');
-            snowflake.className = 'snowflake';
-            snowflake.style.left = Math.random() * window.innerWidth + 'px';
-            document.body.appendChild(snowflake);
-
-            setTimeout(() => {
-                snowflake.remove();
-            }, 10000); // Eliminar el copo de nieve después de 10 segundos
-        }
-
-        function snowfall() {
-            setInterval(createSnowflake, 100); // Crear un nuevo copo de nieve cada 100 milisegundos
-        }
-
-        snowfall();
-    </script>
 
     <script>
         function updateCountdown() {
