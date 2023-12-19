@@ -1,26 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-  <meta charset="utf-8">
-  <title>Countdown to Christmas 2023</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" href="css/main.css">
-  <script src="js/jquery.min.js"></script>
-  <script src="js/jquery.countdown.min.js"></script>
-  <script>
-    $(function () {
-      const xmas = new Date(2023, 11, 25);
-      $('#countdown').countdown({
-        until: xmas,
-        compact: true,
-        layout: '{d<}{dn} {dl}{d>}' // Muestra solo los días
-      });
-    });
-  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pantalla LED Gabity</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            font-family: 'YourNavidadFont', cursive;
+        }
+
+        .snowflakes {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+            background: url('fondonavideño.png') repeat;
+        }
+    </style>
 </head>
 <body>
-  <div id="countdown-container" tabindex="0" role="img" aria-label="Christmas countdown">
-    <span id="countdown"></span>
-  </div>
+    <div class="content" id="content"></div>
+    <div class="snowflakes"></div>
+
+    <script>
+        const content = document.getElementById('content');
+        const pages = ['countdown.html', 'news.html', 'logo.html'];
+        let currentPage = 0;
+
+        function loadPage() {
+            content.innerHTML = '';
+            const iframe = document.createElement('iframe');
+            iframe.src = pages[currentPage];
+            iframe.style.width = '100vw';
+            iframe.style.height = '100vh';
+            content.appendChild(iframe);
+
+            currentPage = (currentPage + 1) % pages.length;
+            setTimeout(loadPage, 25000); // Cambia de página cada 25 segundos
+        }
+
+        loadPage();
+    </script>
 </body>
 </html>
