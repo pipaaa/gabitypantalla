@@ -8,7 +8,8 @@
         body {
             margin: 0;
             overflow: hidden;
-            background: black; /* Fondo negro */
+            background: black url('fondonavideño.png') no-repeat center center fixed;
+            background-size: cover;
         }
 
         .content {
@@ -18,9 +19,9 @@
             transform: translate(-50%, -50%);
             text-align: center;
             font-family: 'YourNavidadFont', cursive;
-            border: 5px solid black; /* Contorno negro */
-            border-radius: 10px; /* Esquinas redondeadas */
-            overflow: hidden; /* Para ocultar el desbordamiento del contenido interno */
+            border: 5px solid black;
+            border-radius: 10px;
+            overflow: hidden;
         }
     </style>
 </head>
@@ -41,7 +42,7 @@
             content.appendChild(iframe);
 
             currentPage = (currentPage + 1) % pages.length;
-            setTimeout(loadPage, 25000); // Cambia de página cada 25 segundos
+            setTimeout(loadPage, 25000);
         }
 
         loadPage();
