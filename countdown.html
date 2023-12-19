@@ -12,19 +12,20 @@
 
         .countdown {
             position: absolute;
-            top: 50%;
+            top: 40%; /* Ajusta la posición vertical según sea necesario */
             left: 50%;
             transform: translate(-50%, -50%);
             text-align: center;
-            font-family: 'Lobster Two', cursive; /* Cambia 'Lobster Two' por la fuente que desees */
+            font-family: 'YourNavidadFont', cursive;
             color: white;
-            font-size: 3em;
+            font-size: 4em; /* Ajusta el tamaño del texto según sea necesario */
+            font-weight: bold; /* Texto en negrita */
         }
     </style>
 </head>
 <body>
     <div class="countdown" id="countdown"></div>
-
+    
     <script>
         // JavaScript para la cuenta atrás hasta Navidad
         function updateCountdown() {
