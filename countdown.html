@@ -27,11 +27,11 @@
         }
 
         .countdown-title {
-            font-size: 1.5em;
+            font-size: 1.2em; /* Ajusta el tamaño del texto según sea necesario */
             color: white;
             margin-bottom: 10px;
             position: absolute;
-            top: 10px; /* Ajusta la posición vertical según sea necesario */
+            top: -25px; /* Ajusta la posición vertical encima del contorno */
             left: 50%;
             transform: translateX(-50%);
         }
@@ -50,17 +50,4 @@
 
             const difference = christmas - now;
 
-            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
-
-            const countdownText = document.getElementById('countdown-text');
-            countdownText.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-        }
-
-        setInterval(updateCountdown, 1000);
-        updateCountdown();
-    </script>
-</body>
-</html>
+            const days = 
